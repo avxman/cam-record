@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Video & Audio Recorder</title>
+  </head>
+
+  <body>
+
+    <h1> Video & Audio Recorder </h1>
+    <label for="media">Select what you want to record:</label>
+
+    <select id="media">
+      <option value="choose-an-option">Choose an option</option>
+      <option value="video">Video</option>
+      <option value="audio">Audio</option>
+    </select>
+
+    <div class="display-none" id="video-recorder">
+
+      <h3>Record Video </h3>
+
+      <video autoplay id="web-cam-container" style="background-color: black;">
+        Your browser doesn't support
+        the video tag
+      </video>
+
+      <div class="recording" id="video-record-status">
+        Click the "Start video Recording"
+        button to start recording
+      </div>
+
+      <button type="button" id="start-video-recording" onclick="startRecording(this, document.getElementById('stop-video-recording'))">
+        Start video recording
+      </button>
+
+      <button type="button" id="stop-video-recording" disabled onclick="stopRecording(this, document.getElementById('start-video-recording'))">
+        Stop video recording
+      </button>
+
+    </div>
+
+    <div class="display-none" id="audio-recorder">
+
+      <h3> Record Audio</h3>
+
+      <div class="recording" id="audio-record-status">
+        Click the "Start Recording"
+        button to start recording
+      </div>
+
+      <button type="button" id="start-audio-recording" onclick="startRecording(this, document.getElementById('stop-audio-recording'))">
+        Start recording
+      </button>
+
+      <button type="button" id="stop-audio-recording" disabled onclick="stopRecording(this, document.getElementById('start-audio-recording'))">
+        Stop recording
+      </button>
+
+    </div>
+
+    <script src="index.js"></script>
+
+  </body>
+
+</html>
