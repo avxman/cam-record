@@ -2,20 +2,30 @@
 <html lang="uk">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Video Record</title>
         <link rel="stylesheet" type="text/css" href="index.css"/>
     </head>
     <body>
 
-        <main id="container">
-            <video id="video" width="300" height="150" playsinline autoplay muted></video>
-            <section id="section">
-                <button id="play">Play</button>
-                <button id="stop" disabled>Stop</button>
-            </section>
-        </main>
+        <div id="video-record-main">
+            <div id="video-record-wrap">
+                <div id="video-record-container">
+                    <video id="video-record" playsinline autoplay muted></video>
+                    <div id="video-record-control">
+                        <button id="play" title="Record"></button>
+                        <button id="stop" title="Stop" disabled></button>
+                    </div>
+                </div>
+                <div id="video-record-download"></div>
+                <div id="video-record-group-btn"></div>
+            </div>
+        </div>
 
         <script src="index.js"></script>
+        <script>
+            new RecordCamera()
+        </script>
 
     </body>
 </html>
