@@ -57,6 +57,8 @@ class RecordCamera{
 
             if(this.isValid() && await this.initMedia(this.video)){
 
+                this.clearContent()
+
                 this.mediaRecord.addEventListener("dataavailable", (e)=>{
                     this.onDataAvailable(e)
                 })
@@ -85,6 +87,11 @@ class RecordCamera{
         this.btnStop.addEventListener("click", () => {
             this.stop()
         })
+    }
+
+    clearContent(){
+        this.container.innerHTML = ""
+        this.groupBtn.innerHTML = ""
     }
 
     isValid(){
